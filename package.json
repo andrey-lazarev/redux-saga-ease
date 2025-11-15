@@ -1,0 +1,16 @@
+{
+  "name": "redux-saga-ease",
+  "version": "0.1.0",
+  "private": false,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build:library": "pnpm --filter @rse/library build",
+    "build": "pnpm -w run build:library",
+    "test": "pnpm -w run test:library || true"
+  },
+  "dependencies": {
+    "redux": "^5.0.1"
+  }
+}
