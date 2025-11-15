@@ -136,25 +136,3 @@ slice = {
   rootSaga,
 }
 ```
-
----
-
-# Testing
-
-Sagas are easily testable:
-
-```ts
-import { runSaga } from "redux-saga";
-
-it("loads user", async () => {
-  const dispatched = [];
-
-  await runSaga(
-    { dispatch: (a) => dispatched.push(a) },
-    userSlice.sagas.fetchUserRequestSaga,
-    userSlice.actions.fetchUserRequest()
-  ).toPromise();
-
-  expect(dispatched[0].type).toBe("user/fetchUserSuccess");
-});
-```
